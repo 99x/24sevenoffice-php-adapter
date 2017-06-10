@@ -1,4 +1,4 @@
-# 24sevenoffice-php-adapter
+# 24SevenOffice-PHP-Adapter
 A PHP Adapter to use in integrations with https://24sevenoffice.com/ CRM platform
 
 ## Getting Started
@@ -25,3 +25,6 @@ For more data fields http://developer.24sevenoffice.com/diverse/apicompanyservic
 
 
 ### TODO
+
+- Create a REST Endpoint to call the functions directly
+- Make the functions run independently on requests
