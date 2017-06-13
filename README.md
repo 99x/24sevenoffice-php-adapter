@@ -12,7 +12,14 @@ Use the config.php to set the 24sevenoffice credentials http://developer.24seven
 
 ## Functions
 
+To call the API endpoint use a POST to the index document
+```
+http://YourHost/index.php?type=TYPE
+```
+---
 ### Save Companies
+Use the **type=new**
+
 To save a company to the CRM you can use the following method and add the needed fields,
 
 ```php
@@ -21,6 +28,56 @@ To save a company to the CRM you can use the following method and add the needed
         $company["companies"][0]['OrganizationNumber'] ="ORG_ID";
 ```
 
+#### Request Body: 
+```javascript
+{
+	"Name" : "NAME TO SENT",
+	"Email" : "EMAIL ADD",
+	"Account_ID" : "A123"
+}
+```
+
+#### Response:
+**Success** Will return the added organization
+
+```javascript
+{
+    "status": 1,
+    "data": {
+        "Id": 46,
+        "OrganizationNumber": "A123",
+        "Name": "NAME TO SENT",
+        "EmailAddresses": {
+            "Invoice": {
+                "Description": "EMAIL ADD",
+                "Name": "EMAIL ADD",
+                "Value": "EMAIL ADD"
+            },
+            "Work": {
+                "Description": "EMAIL ADD",
+                "Name": "EMAIL ADD",
+                "Value": "EMAIL ADD"
+            }
+        },
+        "Type": "Business",
+        "LedgerCustomerAccount": 0,
+        "LedgerSupplierAccount": 0
+    },
+    "identity": "{CURRENT IDENTITY OBJECT}"
+}
+```
+
+**Fail** Will return the error with the status code of 1
+
+Sample: 
+```javascript
+{
+    "status": 0,
+    "data": "Property Type is missing.",
+    "identity": "{CURRENT IDENTITY OBJECT}"
+}
+```
+---
 For more data fields http://developer.24sevenoffice.com/diverse/apicompanyservice-datatypes/
 
 
