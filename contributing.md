@@ -1,4 +1,4 @@
-# Contributing to dynamodb-migrations
+# Contributing to 24sevenoffice-php-adapter
 
 First of all,thanks for your willingness shown to contribute !!
 
